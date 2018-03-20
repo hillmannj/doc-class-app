@@ -1,4 +1,10 @@
 shuffled-full-set-hashed.csv
 train.pkl
 test.pkl
-/eb-virt/
+.elasticbeanstalk/
+eb-virt/
+eb-virt/*
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
