@@ -1,6 +1,7 @@
 body {
   background-image: url("bg.jpeg");
   background-position: center;
+  background-attachment: fixed;
   font-family: Helvetica, Arial, sans-serif;
 }
 
@@ -55,4 +56,18 @@ input[type="submit"]:hover {
 
 h1 {
   color: #3794e7;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  padding-bottom: 0;
+  border-bottom: 2px solid #3794e7;
+}
+
+a:hover {
+  color: #3794e7;
+  padding-bottom: 0;
+  border-bottom: 2px solid #000;
 }

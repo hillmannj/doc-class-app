@@ -2,22 +2,22 @@
 <html lang="en">
 <head>
   <title>HeavyWater Text Classification Model</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}">
 </head>
 <body>
-  <div class="form">
-    <p>Please input document text to classify.</p>
+  <div id="container">
+    <h1>Please input document text to classify:</h1>
     <form action="/" method="get">
-        <textarea name="words" placeholder="Enter document data" required>
-        </textarea><br>
-        <input type=submit value=Classify>
-      </form>
-  </div>
-
+      <textarea rows=10 name="words" placeholder="Enter document data" required autofocus></textarea>
+      <br>
+      <input type=submit value=Classify>
+    </form>
   {% if result %}
-  <div class="result">
+  <div id="result">
     <p>{{ result }}</p>
+    <p><a href="/"><< Go back</a></p>
   </div>
   {% endif %}
+  </div>
 </body>
 </html>
