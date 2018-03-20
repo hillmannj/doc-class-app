@@ -17,11 +17,11 @@ def index(result=None):
     return render_template('index.html', result=result)
 
 def classify_words(words):
-    with open(url_for('static', filename='id_to_label.pkl'), 'rb') as file:
+    with application.open_resource('id_to_label.pkl', 'rb') as file:
         id_to_label = joblib.load(file)
-    with open(url_for('static', filename='pipeline.pkl'), 'rb') as file:
+    with application.open_resource('pipeline.pkl', 'rb') as file:
         pipeline = joblib.load(file)
-    with open(url_for('static', filename='HeavyWater-text-class-model.pkl'), 'rb') as file:
+    with application.open_resource('HeavyWater-text-class-model.pkl', 'rb') as file:
         clf = joblib.load(file)
     words = [words]
     words_vector = pipeline.transform(words)
