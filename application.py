@@ -13,7 +13,8 @@ application = Flask(__name__)
 @application.route('/', methods=['GET'])
 def index(result=None):
     if request.args.get('words', None):
-        result = classify_words(request.args['words'])
+        print(request.args['words'])
+        #result = classify_words(request.args['words'])
     return render_template('index.html', result=result)
 
 def classify_words(words):
