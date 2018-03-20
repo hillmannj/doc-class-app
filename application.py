@@ -14,7 +14,11 @@ application = Flask(__name__)
 def index(result=None):
     if request.args.get('words', None):
         print(request.args['words'])
+<<<<<<< HEAD
         #result = classify_words(request.args['words'])
+=======
+        result = classify_words(request.args['words'])
+>>>>>>> 402fd4f32341b5a0df8a160bf613dec9c73f9077
     return render_template('index.html', result=result)
 
 def classify_words(words):
