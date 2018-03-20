@@ -32,5 +32,4 @@ def classify_words(words):
     return("Predicted label: {0} with {1:.2f}% confidence".format(predicted, confidence))
 
 if __name__ == "__main__":
-    application.debug = True
-    application.run()
+    application.run(debug=True)
