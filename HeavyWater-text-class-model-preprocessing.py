@@ -1,9 +1,9 @@
 import pandas as pd
 import numpy as np
+import joblib
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
-from sklearn.externals import joblib
 from imblearn.over_sampling import SMOTE
 
 df = pd.read_csv('shuffled-full-set-hashed.csv', header=None,
@@ -19,9 +19,9 @@ with open('label_to_id.pkl', 'wb') as file:
 with open('id_to_label.pkl', 'wb') as file:
     joblib.dump(id_to_label, file)
 train, test, train_labels, test_labels = train_test_split(df['data'],
-    df['label_id'], test_size=0.4, random_state=42, stratify=df['label_id'])
+    df['label_id'], test_size=0.4, random_state=42)
 with open('test.pkl', 'wb') as file:
-    test.to_pickle(file)
+    pd.to_pickle(test, file)
     pd.to_pickle(test_labels, file)
 with open('train.pkl', 'wb') as file:
     pd.to_pickle(train, file)

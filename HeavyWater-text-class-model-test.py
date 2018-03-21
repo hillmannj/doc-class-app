@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import joblib
 import matplotlib.pyplot as plt
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
 from sklearn.linear_model import LogisticRegression
@@ -7,7 +8,6 @@ from sklearn.svm import LinearSVC
 from sklearn.ensemble import VotingClassifier
 from sklearn.metrics import confusion_matrix, classification_report
 from sklearn.pipeline import Pipeline
-from sklearn.externals import joblib
 
 with open('test.pkl', 'rb') as file:
     test = pd.read_pickle(file)
@@ -29,4 +29,4 @@ plt.title('Confusion matrix')
 fig.colorbar(cax)
 plt.xlabel('Predicted')
 plt.ylabel('True')
-plt.savefig('confusion_matrix.png')
+plt.savefig('confusion-matrix.png')

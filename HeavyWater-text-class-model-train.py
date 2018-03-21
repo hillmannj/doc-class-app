@@ -1,12 +1,12 @@
 import pandas as pd
 import numpy as np
+import joblib
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
 from sklearn.svm import LinearSVC
 from sklearn.multiclass import OneVsRestClassifier
 from sklearn.calibration import CalibratedClassifierCV
 from sklearn.model_selection import cross_val_score
 from sklearn.pipeline import Pipeline
-from sklearn.externals import joblib
 
 with open('train.pkl', 'rb') as file:
     train = pd.read_pickle(file)
